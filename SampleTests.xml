@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Tests>
+  <Test Title="Simple request" Url="http://localhost" Method="GET" Timeout="5000" />
+  <Test Title="Send headers" Url="http://localhost/headertest" Method="POST" Timeout="60000">
+    <Header Name="header1" Value="header1value" />
+    <Header Name="header2" Value="header2value" />
+  </Test>
+  <Test Title="Send POST parameters" Url="http://localhost/posttest" Method="POST" Timeout="60000">
+    <PostParameter Name="post1" Value="post1value" />
+    <PostParameter Name="post2" Value="post2value" />
+  </Test>
+  <Test Title="Send query string parameters" Url="http://localhost/qstest" Method="GET" Timeout="5000">
+    <QuerystringParameter Name="qs1" Value="qs1value" />
+    <QuerystringParameter Name="qs2" Value="qs2value" />
+  </Test>
+  <Test Title="Send credentials" Url="http://localhost/credentialstest" Method="GET" Timeout="5000">
+    <Credentials Username="username" Password="password" />
+  </Test>
+  <Test Title="Check response body contains" Url="http://localhost/responsebodycontainstest" Method="GET" Timeout="5000">
+    <Checks>
+      <BodyContains Text="text" />
+    </Checks>
+  </Test>
+  <Test Title="Check response body does not contain" Url="http://localhost/responsebodydoesnotcontaintest" Method="GET" Timeout="5000">
+    <Checks>
+      <BodyDoesNotContain Text="text" />
+    </Checks>
+  </Test>
+  <Test Title="Check response headers contains" Url="http://localhost/responseheaderscontainstest" Method="GET" Timeout="5000">
+    <Checks>
+      <HeadersContains Name="header" Value="value" />
+    </Checks>
+  </Test>
+  <Test Title="Check response headers does not contain" Url="http://localhost/responseheadersdoesnotcontaintest" Method="GET" Timeout="5000">
+    <Checks>
+      <HeadersDoesNotContain Name="header" Value="value" />
+    </Checks>
+  </Test>
+  <Test Title="Multiple checks" Url="http://localhost/multiplecheckstest" Method="GET" Timeout="5000">
+    <Checks>
+      <BodyContains Text="BodyContains" />
+      <BodyDoesNotContain Text="BodyDoesNotContain" />
+      <HeadersContains Name="Headers" Value="Contains" />
+      <HeadersDoesNotContain Name="Headers" Value="DoesNotContain" />
+    </Checks>
+  </Test>
+</Tests>

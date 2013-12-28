@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tests>
+  <test url="http://www.google.com" />
+  <test url="http://localhost/responsetest">
+    <response>
+      <contains text="head" />
+      <missing text="helicopter" />
+    </response>
+  </test>
+  <test url="http://localhost/requesttest">
+    <request method="POST">
+      <variable name="var1" value="var1value" />
+      <variable name="var2" value="var2value" />
+    </request>
+  </test>
+</tests>
